@@ -1,0 +1,73 @@
+
+* { 
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  border: 2px solid black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &.darkmode {
+    background: black;
+    color:white;
+  }
+
+  > .content {
+    flex-grow: 1;
+  }
+
+  .Footer {
+    display: flex;
+
+    > * {
+      width: 0;
+      height: 50px;
+      flex-grow: 1;
+
+      button {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    button {
+      font-size: 1.15em;
+      color: dodgerblue;
+    }
+  }
+}
+
+.Calendar {
+  --border-style: 0.5px solid rgba(100, 100, 100, 0.3);
+}
+
+.Calendar h1 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Calendar .cells {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: var(--border-style);
+  border-left: var(--border-style);
+}
+
+.Calendar .cells > div {
+  width: calc(100% / 7);
+  border-bottom: var(--border-style);
+  border-right: var(--border-style);
+  padding: 10px;
+}
+
+.Calendar .cells > .header {
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.Calendar .cells .event {
+  color: lime;
+}
